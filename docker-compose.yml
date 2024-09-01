@@ -1,0 +1,30 @@
+name: "fast-bird"
+
+services:
+  entry:
+    image: nginx:1.27.1-alpine
+    init: true
+    ports:
+      - "80:80"
+      - "443:443"
+  frps:
+    image: fast_bird_frps
+    hostname: frps.grayless.top
+    build:
+      target: frps
+    init: true
+    tty: true
+    configs:
+      - source: frps
+        target: /etc/frps.toml
+    expose:
+      - 7000
+      - 7500
+      - 5002
+      - 8082
+    ports:
+      - "7500:7500"
+
+configs:
+  frps:
+    file: config/frp/frps.toml

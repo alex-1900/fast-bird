@@ -3,6 +3,8 @@
 # 获取证书
 ```shell
 certbot certonly --standalone -d comblldxtfy.frps.grayless.top
+certbot certonly --dns-cloudflare --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini -d example.com -d *.example.com
+
 ```
 
 # frp 客户端配置

@@ -41,6 +41,6 @@ configs:
 
 secrets:
   blldxt91fy_fullchain:
-    file: /etc/letsencrypt/live/grayless.top/fullchain.pem
+    file: /etc/letsencrypt/live/frps.grayless.top/fullchain.pem
   blldxt91fy_privkey:
-    file: /etc/letsencrypt/live/grayless.top/privkey.pem
+    file: /etc/letsencrypt/live/frps.grayless.top/fullchain.pem

@@ -49,6 +49,6 @@ secrets:
   blldxt91fy_privkey:
     file: /etc/letsencrypt/live/blldxt91fy.frps.grayless.top/privkey.pem
   comblldxtfy_fullchain:
-    file: /etc/letsencrypt/live/blldxt91fy.frps.grayless.top/fullchain.pem
+    file: /etc/letsencrypt/live/comblldxtfy.frps.grayless.top/fullchain.pem
   comblldxtfy_privkey:
-    file: /etc/letsencrypt/live/blldxt91fy.frps.grayless.top/privkey.pem
+    file: /etc/letsencrypt/live/comblldxtfy.frps.grayless.top/privkey.pem

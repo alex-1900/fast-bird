@@ -1,8 +1,0 @@
-serverAddr = "66.112.215.31"
-serverPort = 7000
-
-[[proxies]]
-name = "web"
-type = "http"
-localPort = 8080
-customDomains = ["comblldxtfy.frps.grayless.top"]

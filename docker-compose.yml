@@ -6,13 +6,9 @@ services:
     init: true
     secrets:
       - source: blldxt91fy_fullchain
-        target: /run/secrets/blldxt91fy_fullchain.pem
+        target: /run/secrets/grayless_fullchain.pem
       - source: blldxt91fy_privkey
-        target: /run/secrets/blldxt91fy_privkey.pem
-      - source: comblldxtfy_fullchain
-        target: /run/secrets/comblldxtfy_fullchain.pem
-      - source: comblldxtfy_privkey
-        target: /run/secrets/comblldxtfy_privkey.pem
+        target: /run/secrets/grayless_privkey.pem
     configs:
       - source: nginx_frps
         target: /etc/nginx/templates/blldxt91fy.frps.conf.template
@@ -45,10 +41,6 @@ configs:
 
 secrets:
   blldxt91fy_fullchain:
-    file: /etc/letsencrypt/live/blldxt91fy.frps.grayless.top/fullchain.pem
+    file: /etc/letsencrypt/live/grayless.top/fullchain.pem
   blldxt91fy_privkey:
-    file: /etc/letsencrypt/live/blldxt91fy.frps.grayless.top/privkey.pem
-  comblldxtfy_fullchain:
-    file: /etc/letsencrypt/live/comblldxtfy.frps.grayless.top/fullchain.pem
-  comblldxtfy_privkey:
-    file: /etc/letsencrypt/live/comblldxtfy.frps.grayless.top/privkey.pem
+    file: /etc/letsencrypt/live/grayless.top/privkey.pem

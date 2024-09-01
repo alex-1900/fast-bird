@@ -4,9 +4,14 @@ services:
   entry:
     image: nginx:1.27.1-alpine
     init: true
+    secrets:
+      - source: blldxt91fy_fullchain
+        target: /run/secrets/blldxt91fy_fullchain.pem
+      - source: blldxt91fy_privkey
+        target: /run/secrets/blldxt91fy_privkey.pem
     configs:
       - source: nginx_frps
-        target: /etc/nginx/templates/frps.conf.template
+        target: /etc/nginx/templates/blldxt91fy.frps.conf.template
     ports:
       - "80:80"
       - "443:443"
@@ -32,4 +37,10 @@ configs:
   frps:
     file: config/frp/frps.toml
   nginx_frps:
-    file: config/entry/conf.d/frps.conf
+    file: config/entry/conf.d/blldxt91fy.frps.conf
+
+secrets:
+  blldxt91fy_fullchain:
+    file: /etc/letsencrypt/live/blldxt91fy.frps.grayless.top/fullchain.pem
+  blldxt91fy_privkey:
+    file: /etc/letsencrypt/live/blldxt91fy.frps.grayless.top/privkey.pem

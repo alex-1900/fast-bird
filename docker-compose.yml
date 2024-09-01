@@ -5,13 +5,13 @@ services:
     image: nginx:1.27.1-alpine
     init: true
     secrets:
-      - source: blldxt91fy_fullchain
+      - source: frp_fullchain
         target: /run/secrets/grayless_fullchain.pem
-      - source: blldxt91fy_privkey
+      - source: frp_privkey
         target: /run/secrets/grayless_privkey.pem
     configs:
       - source: nginx_frps
-        target: /etc/nginx/templates/blldxt91fy.frps.conf.template
+        target: /etc/nginx/templates/frps.conf.template
     ports:
       - "80:80"
       - "443:443"
@@ -21,13 +21,11 @@ services:
     build:
       target: frps
     init: true
-    tty: true
     configs:
       - source: frps
         target: /etc/frps.toml
     expose:
       - 7000
-      - 7500
       - 5002
       - 8082
     ports:
@@ -37,10 +35,10 @@ configs:
   frps:
     file: config/frp/frps.toml
   nginx_frps:
-    file: config/entry/conf.d/blldxt91fy.frps.conf
+    file: config/entry/conf.d/frps.conf
 
 secrets:
-  blldxt91fy_fullchain:
+  frp_fullchain:
     file: /etc/letsencrypt/live/frps.grayless.top/fullchain.pem
-  blldxt91fy_privkey:
+  frp_privkey:
     file: /etc/letsencrypt/live/frps.grayless.top/privkey.pem

@@ -9,7 +9,7 @@ services:
       - "443:443"
   frps:
     image: fast_bird_frps
-    hostname: frps.grayless.top
+    hostname: top.grayless.frps
     build:
       target: frps
     init: true

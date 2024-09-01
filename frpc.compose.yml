@@ -1,0 +1,16 @@
+name: "frpc-fast-bird"
+
+services:
+  frpc:
+    image: frpc_fast_bird_frpc
+    build:
+      target: frpc
+    init: true
+    network_mode: host
+    configs:
+      - source: frpc
+        target: /etc/frpc.toml
+
+configs:
+  frpc:
+    file: config/frp/frpc.toml

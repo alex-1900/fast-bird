@@ -26,8 +26,6 @@ services:
     configs:
       - source: frps
         target: /etc/frps.toml
-      - source: frp_not_found_page
-        target: /var/frp/not_found.html
     volumes:
       - "./config/frp/not_found.html:/var/frp/not_found.html"
     expose:

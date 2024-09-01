@@ -4,6 +4,9 @@ services:
   entry:
     image: nginx:1.27.1-alpine
     init: true
+    configs:
+      - source: nginx_frps
+        target: /etc/nginx/templates/frps.conf.template
     ports:
       - "80:80"
       - "443:443"
@@ -28,3 +31,5 @@ services:
 configs:
   frps:
     file: config/frp/frps.toml
+  nginx_frps:
+    file: config/entry/conf.d/frps.conf

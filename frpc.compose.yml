@@ -6,7 +6,6 @@ services:
     build:
       target: frpc
     init: true
-    network_mode: host
     configs:
       - source: frpc
         target: /etc/frpc.toml

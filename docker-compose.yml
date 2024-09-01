@@ -10,7 +10,7 @@ services:
       - source: blldxt91fy_privkey
         target: /run/secrets/blldxt91fy_privkey.pem
       - source: comblldxtfy_fullchain
-        target: /run/secrets/comblldxtfy_privkey.pem
+        target: /run/secrets/comblldxtfy_fullchain.pem
       - source: comblldxtfy_privkey
         target: /run/secrets/comblldxtfy_privkey.pem
     configs:

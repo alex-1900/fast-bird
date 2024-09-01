@@ -21,10 +21,16 @@ serverAddr = "66.112.215.31"
 serverPort = 7000
 
 [[proxies]]
-name = "web"
+name = "web0"
 type = "http"
 localPort = 8080
 customDomains = ["blldxt91fy.frps.grayless.top"]
+
+[[proxies]]
+name = "web1"
+type = "http"
+localPort = 8081
+customDomains = ["comblldxtfy.frps.grayless.top"]
 ```
 开启服务
 ```shell

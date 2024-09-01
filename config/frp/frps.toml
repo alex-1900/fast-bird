@@ -1,2 +1,3 @@
 bindPort = 7000
 vhostHTTPPort = 8082
+custom_404_page = /var/frp/not_found.html

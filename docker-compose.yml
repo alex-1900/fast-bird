@@ -10,6 +10,8 @@ services:
       - source: frp_privkey
         target: /run/secrets/grayless_privkey.pem
     configs:
+      - source: nginx_conf
+        target: /etc/nginx/nginx_conf
       - source: nginx_frps
         target: /etc/nginx/templates/frps.conf.template
     ports:
@@ -32,6 +34,8 @@ services:
       - "7000:7000"
 
 configs:
+  nginx_conf:
+    file: config/entry/nginx.conf
   frps:
     file: config/frp/frps.toml
   nginx_frps:
